@@ -1,90 +1,86 @@
-Linux Auto-Updater  
-A self-installing Linux system update automation script by KixxU
+# Linux Auto-Updater  
+*A self-installing Linux system update automation script by KixxU*
 
-------------------------------------------------------------
+> [!WARNING]
+> ## ⚠️ Legal Disclaimer  
+> This tool is intended for **educational use and authorized system administration only**.  
+> Running automated updates on systems you do not own or manage with permission may be illegal.  
+> The author is **not responsible** for any damage, data loss, or system changes caused by misuse.
 
-⚠️ Legal Disclaimer  
-This tool is intended for educational use and personal system maintenance only.  
-Automating updates on machines you do not own or manage with proper authorization may be illegal.  
-The author holds no responsibility for any issues, data loss, or system malfunctions caused by misuse.
+## 📝 Description  
+Linux Auto-Updater is a Bash-based script that keeps your Linux system automatically updated.  
+It supports major distributions like **Debian, Ubuntu, Fedora, CentOS, and Arch**, and installs itself as a background cron job that runs silently based on your schedule.
 
-------------------------------------------------------------
+## ✨ Features  
+- **Interactive Setup:** Choose daily or weekly update schedules  
+- **Self-Installing:** Installs into `/usr/local/bin` and configures a system-wide cron job  
+- **Multi-Distro Support:** Automatically detects `apt`, `dnf`, `yum`, or `pacman`  
+- **Background Operation:** Updates run silently without user interaction  
+- **Clean Uninstall:** Comes with a script to remove all traces  
+- **Activity Logging:** Logs all actions to `/var/log/auto_system_updates.log`
 
-📘 Description  
-Linux Auto-Updater is a portable Bash script that automates system package updates  
-across major Linux distributions (Debian, Ubuntu, Fedora, CentOS, Arch, etc.).  
-It installs itself with a one-time setup and uses cron to silently update the system  
-based on your preferred schedule.
+---
 
-------------------------------------------------------------
+## 🚀 Installation & Setup
 
-✨ Features  
-- Interactive Setup: Choose daily or weekly update schedule  
-- Self-Installing: Adds itself to /usr/local/bin and creates a cron job  
-- Multi-Distro Support: Automatically detects apt, dnf, yum, or pacman  
-- Silent Background Operation: No user input required after setup  
-- Clean Uninstall: Comes with a script to remove itself safely  
-- Logging: Logs all actions to /var/log/auto_system_updates.log
+> [!INFO]
+> Run the following command in your terminal to begin installation:
 
-------------------------------------------------------------
-
-🛠 Installation & Setup  
-Run this command in your terminal to start interactive setup:
-
+```bash
 wget -qO- https://raw.githubusercontent.com/CMAgent007/linux-auto-updater/main/install-updater.sh | sudo bash
+```
 
-You'll be asked to choose your schedule and time. The script then installs and configures itself.
+- The script will prompt you to choose daily or weekly updates and set a time.
+- Once confirmed, it installs itself and schedules the task automatically.
 
-------------------------------------------------------------
+---
 
-▶️ Usage  
-1. Answer the prompts (daily/weekly, time of day)  
-2. Confirm setup  
-3. Done — system will update automatically as scheduled
+## ▶️ Usage
 
-To check the updater’s activity log:
+> [!NOTE]
+> After installation, the system will auto-update based on your selected schedule.  
+> To check the update log:
 
+```bash
 cat /var/log/auto_system_updates.log
+```
 
-------------------------------------------------------------
+---
 
-⚙️ Manual Setup (For Developers)  
-If you'd prefer to install manually or make modifications:
+## ⚙️ Manual Setup (For Developers)
 
-1. Clone the repository:
+> [!INFO]
+> Use these steps if you want to manually install or modify the script:
 
-   git clone https://github.com/CMAgent007/linux-auto-updater.git  
-   cd linux-auto-updater
+```bash
+git clone https://github.com/CMAgent007/linux-auto-updater.git
+cd linux-auto-updater
+chmod +x install-updater.sh
+sudo ./install-updater.sh
+```
 
-2. Make the installer executable:
+---
 
-   chmod +x install-updater.sh
+## 🧹 Uninstallation
 
-3. Run the installer manually with elevated privileges:
+> [!INFO]
+> Run the following commands to fully remove the updater and its configuration:
 
-   sudo ./install-updater.sh
+```bash
+git clone https://github.com/CMAgent007/linux-auto-updater.git
+cd linux-auto-updater
+chmod +x uninstall-updater.sh
+sudo ./uninstall-updater.sh
+```
 
-This gives you control over the script before deployment.
+- The script removes the cron job, the installed command, and will ask if you want to delete the log file.
 
-------------------------------------------------------------
+---
 
-🧹 Uninstallation  
-To completely remove the updater:
+## 👤 Author  
+**KixxU**
 
-1. Clone or navigate to the directory:
-   git clone https://github.com/CMAgent007/linux-auto-updater.git  
-   cd linux-auto-updater
+---
 
-2. Make the uninstaller executable:
-   chmod +x uninstall-updater.sh
-
-3. Run the uninstaller:
-   sudo ./uninstall-updater.sh
-
-It will remove the script, the cron job, and optionally delete the log file.
-
-------------------------------------------------------------
-
-👤 Author: KixxU  
-📄 License:  
+## 📄 License  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/CMAgent007/linux-auto-updater/blob/master/LICENSE)
