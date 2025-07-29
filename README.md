@@ -72,4 +72,5 @@ sudo ./install-updater.sh
 ---
 
 ### 📄 License  
-This project is licensed under the [MIT License](https://github.com/CMAgent007/linux-auto-updater/blob/main/LICENSE).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/CMAgent007/linux-auto-updater/blob/master/LICENSE)
+
