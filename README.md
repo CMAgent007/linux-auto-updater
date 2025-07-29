@@ -1,67 +1,75 @@
-Linux Auto-Updater Script
+# Linux Auto-Updater  
+A self-installing Linux system update automation script by KixxU
 
-A self-installing script that automates system package updates for Debian, Ubuntu, Fedora, CentOS, Arch, and other related Linux distributions.
+---
 
-Description
+### ⚠️ Legal Disclaimer  
+This tool is intended for educational purposes and for use in authorized system administration or personal use cases ONLY. Automating updates on systems you do not own or have permission to manage may be illegal. The author is not responsible for any misuse, errors, or system changes caused by this tool.
 
-This script is designed for a "one-and-done" setup. You run it a single time, and it interactively prompts you to define an update schedule (daily or weekly). It then installs itself as a system-wide command and automatically configures a cron job to handle all future package updates without any further user interaction.
+---
 
-Features
+### 📘 Description  
+Linux Auto-Updater is a Bash script designed to simplify system package management across major Linux distributions. With a one-time interactive setup, it installs itself as a persistent background job and ensures your system stays up-to-date — without further manual intervention.
 
-Interactive Setup: Asks for your preferred schedule upon first run.
+---
 
-One-Time Install: Copies itself to /usr/local/bin and configures a system cron job.
+### ✨ Features  
+- **Interactive Setup**: Prompts you to choose a daily or weekly update schedule  
+- **One-Time Install**: Installs as a system-wide command and configures a cron job  
+- **Multi-Distro Support**: Detects and uses the correct package manager (`apt`, `dnf`, `yum`, or `pacman`)  
+- **Background Operation**: Runs silently on your schedule without user input  
+- **Comprehensive Logging**: Logs all activity to `/var/log/auto_system_updates.log`  
 
-Multi-Distro Support: Automatically detects and uses the correct package manager (apt, dnf, yum, or pacman).
+---
 
-Background Operation: Runs silently in the background according to your schedule.
+### 🛠 Installation & Setup  
+Run the following command in your terminal to begin the interactive installation:
+```bash
+wget -qO- https://raw.githubusercontent.com/CMAgent007/linux-auto-updater/main/install-updater.sh | sudo bash
+```
 
-Comprehensive Logging: All update operations are logged to /var/log/auto_system_updates.log.
+---
 
-Installation
+### ▶️ Usage  
 
-Run the following command in your terminal. It will download the script and start the interactive setup process.
+After running the installation command:
 
-wget -qO- [https://raw.githubusercontent.com/CMAgent007/linux-auto-updater/main/install-updater.sh](https://raw.githubusercontent.com/CMAgent007/linux-auto-updater/main/install-updater.sh) | sudo bash
+1. **Answer the Prompts**: You'll be asked to choose between daily or weekly updates, and to set the hour and minute.
+2. **Confirm**: Once confirmed, the script installs and schedules itself.
+3. **That's it** — your system updates are now fully automated.
 
-
-Usage
-
-After running the installation command, the script will guide you through the setup:
-
-Answer the Prompts: The script will ask if you want updates daily or weekly, at what hour, and at what minute.
-
-Confirm: Once you confirm the settings, the installation is complete.
-
-The script is now fully automated. You can check on its activity at any time by viewing the log file:
-
+To monitor the script's activity:
+```bash
 cat /var/log/auto_system_updates.log
+```
 
+---
 
-Manual Setup (for Developers)
-
-If you want to install the script manually or modify it:
+### ⚙️ Manual Setup (For Developers)  
+If you prefer to install manually or customize the script:
 
 Clone the repository:
-
-git clone [https://github.com/CMAgent007/linux-auto-updater.git](https://github.com/CMAgent007/linux-auto-updater.git)
+```bash
+git clone https://github.com/CMAgent007/linux-auto-updater.git
 cd linux-auto-updater
-
+```
 
 Make the script executable:
-
+```bash
 chmod +x install-updater.sh
+```
 
-
-Run it with sudo:
-
+Run with elevated privileges:
+```bash
 sudo ./install-updater.sh
+```
 
+---
 
-Credits
+### 👤 Author  
+**KixxU**
 
-Author: KixxU
+---
 
-License
-
-This project is licensed under the MIT License.
+### 📄 License  
+This project is licensed under the [MIT License](https://github.com/CMAgent007/linux-auto-updater/blob/main/LICENSE).
